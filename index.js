@@ -23,7 +23,7 @@ class RiotWS extends WebSocket {
     }
 
     // Handle incoming message events
-    MessageEvent(event) {
+    MessageEvent(message) {
         const [type, ...data] = JSON.parse(message)
 
         if(type == TYPES.WELCOME) return this.session = data[0]
